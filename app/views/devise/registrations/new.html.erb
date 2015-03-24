@@ -1,0 +1,61 @@
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f| %>
+
+
+ <!-- Ui-40 -->
+  <div class="ui-40">
+    <div class="ui-block bg-white">
+      <div class="ui-head">
+        <!-- Heading -->
+        <h2 style="color:#8dc153">注册/Sign Up</h2>
+      </div>
+    </div>
+    <!-- Ui-block -->
+    <div class="ui-block bg-white">
+      <!-- Icon -->
+      <div class="ui-icon">
+        <i class="fa fa-envelope lblue"></i>
+      </div>
+      <!-- Input box -->
+      <div class="ui-input">
+        <%= f.email_field :email, autofocus: true, class: "form-control",:placeholder => "Email/邮箱" %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ui-block bg-white">
+      <div class="ui-icon">
+        <i class="fa fa-user lblue"></i>
+      </div>
+      <div class="ui-input">
+       <%= f.text_field :username, autofocus: true, class: "form-control", :placeholder => "Username/用户名"  %>
+      </div>
+    </div>
+    <div class="ui-block bg-white">
+      <!-- Icon -->
+      <div class="ui-icon">
+        <i class="fa fa-lock lblue"></i>
+      </div>
+      <!-- Input box -->
+      <div class="ui-input">
+        <%= f.password_field :password, class: "form-control", :placeholder => "password/密码"  %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ui-block bg-white">
+      <div class="ui-icon">
+        <i class="fa fa-lock lblue"></i>
+      </div>
+      <div class="ui-input">
+       <%= f.password_field :password_confirmation, class: "form-control", :placeholder => "password_confirmation/密码确认" %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+      <!-- Footer -->
+        <div class="ui-foot bg-lblue">
+          <!-- Buttons -->
+          <%= f.submit t('.sign_up', :default => "Sign up"), class: "ui-button" %>
+          <% end %>
+        </div>
+    </div>
+      <div class="ui-block bg-white">
+      </div>
+  </div>

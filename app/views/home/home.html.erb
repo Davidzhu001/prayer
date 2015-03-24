@@ -1,21 +1,5 @@
-<div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Prayer<span>Room</span></div>
-			<br>
-			<br>
-			<br>			<br>
-			<br>
-			<br>			<br>
-			<br>
-			<br>
-			<div>"Prayer does the things<span>  Our hands cannot do"</span></div>
-		</div>
-		<br>
-		<div class="login">
-				<input type="text" placeholder="username" name="user"><br>
-				<input type="password" placeholder="password" name="password"><br>
-				<input type="button" value="Login">
-		</div>
-
-</div>
+<% if user_signed_in? %>
+	
+	<p>Hello, <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
+	
+<% end %>

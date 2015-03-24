@@ -1,0 +1,43 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
+
+@font-face {
+    font-family:FontAwesome;
+    src:url(https://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.eot?#iefix) format('eot'), url(https://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.woff) format('woff'), url(https://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.ttf) format('truetype'), url(https://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.svg#FontAwesome) format('svg');
+    font-weight:400;
+    font-style:normal;
+}
+.logo {
+    padding:10px;
+    color:#fff;
+    font-family:sans-serif;
+    transition:all 0.4s ease;
+}
+.menu {
+    position:absolute;
+    padding:30px 0;
+    font-size:2em;
+    top:0;
+    right: 10%;
+    z-index: 10000;
+    transition:all 0.4s ease;
+}
+header {
+    background:salmon;
+    height:100px;
+    width:100%;
+    top:0;
+    left:0;
+    position:fixed;
+    transition:all 0.4s ease;
+}
+header.sticky {
+    height:60px;
+}
+body {
+}
+
+body .container{
+  padding:130px 0;
+  width:1100px;
+}
