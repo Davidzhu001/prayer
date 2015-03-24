@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:content) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,8 +15,8 @@
   <tbody>
     <% @prayerneeds.each do |prayerneed| %>
       <tr>
-        <td><%= link_to prayerneed.id, prayerneed_path(prayerneed) %></td>
-        <td><%= prayerneed.title %></td>
+        <td><%= link_to prayerneed.user.username, prayerneed %></td>
+        <td><%= link_to prayerneed.title, prayerneed %></td>
         <td><%= prayerneed.content %></td>
         <td><%=l prayerneed.created_at %></td>
         <td>

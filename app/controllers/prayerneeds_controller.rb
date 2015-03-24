@@ -24,8 +24,8 @@ class PrayerneedsController < ApplicationController
   # POST /prayerneeds
   # POST /prayerneeds.json
   def create
-    @prayerneed = Prayerneed.new(prayerneed_params)
-
+    @prayerneed = current_user.prayerneeds.new(prayerneed_params)
+    @user = current_user
     respond_to do |format|
       if @prayerneed.save
         format.html { redirect_to @prayerneed, notice: 'Prayerneed was successfully created.' }

@@ -1,30 +1,32 @@
-<header class="navbar navbar-fixed-top">
-    <div class="logo">
-         <h1>Logo</h1>
+<% if user_signed_in? %> 
+	<header class="navbar navbar-fixed-top">
+	    <div class="logo">
+	         <h1>Logo</h1>
 
-    </div>
-    <div class="menu"> 
-	 <div class="dropdown">
-	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-	    <% if user_signed_in? %> 
-	    	Dashboard
-	    <% else %>
-	    	Login/Sign up
-	    <% end %>
-	    <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-	    <% if user_signed_in? %>
-	   		<li><%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></li>
-	   		<li><%= link_to "Setting", edit_user_registration_path %></li>
-	    <% else %>
-	    	<li role="presentation">Action</li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-	   		 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-	    <% end %>
-	  </ul>
-	 </div>
+	    </div>
+	    <div class="menu"> 
+		 <div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    <% if user_signed_in? %> 
+		    	Dashboard
+		    <% else %>
+		    	Login/Sign up
+		    <% end %>
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <% if user_signed_in? %>
+		   		<li><%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></li>
+		   		<li><%= link_to "Setting", edit_user_registration_path %></li>
+		    <% else %>
+		    	<li role="presentation">Action</li>
+		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+		   		 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+		    <% end %>
+		  </ul>
+		 </div>
 
-    </div>
-</header>
+	    </div>
+	</header>		    
+<% end %>
