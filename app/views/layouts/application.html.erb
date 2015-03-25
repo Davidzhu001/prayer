@@ -8,14 +8,20 @@
   </head>
   <%= render 'layouts/header' %>
   <body>
-    <div class="container">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>
       <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
-      <%= yield %>
-    </div>
+      <% if user_signed_in? %>
+        <div class="bgSizeCover">
+          <%= yield %>
+        </div>
+      <% else %>
+        <div class="container">
+          <%= yield %>
+        </div>
+      <% end %>
   </body>
 </html>

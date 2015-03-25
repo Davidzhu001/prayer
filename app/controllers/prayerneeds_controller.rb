@@ -89,6 +89,6 @@ class PrayerneedsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prayerneed_params
-      params.require(:prayerneed).permit(:title, :content)
+      params.require(:prayerneed).permit(:title, :content, :answer)
     end
 end
