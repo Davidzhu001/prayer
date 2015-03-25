@@ -17,7 +17,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem "font-awesome-rails"
 gem 'draper', '~> 1.4.0'
 gem 'js-routes', '~> 1.0.0'
-gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate'
 
 
 gem 'carrierwave',             '0.10.0'

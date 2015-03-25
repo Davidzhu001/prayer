@@ -4,7 +4,12 @@ class PrayerneedsController < ApplicationController
   # GET /prayerneeds
   # GET /prayerneeds.json
   def index
-    @prayerneeds = Prayerneed.all
+    if params[:username]
+     @user = User.where(username: params[:username]).first
+     @prayerneeds = current_user.prayerneeds.paginate(:page => params[:page], :per_page => 12)
+    else
+     @prayerneeds = Prayerneed.paginate(:page => params[:page], :per_page => 12)
+    end
   end
 
   # GET /prayerneeds/1
@@ -19,6 +24,11 @@ class PrayerneedsController < ApplicationController
 
   # GET /prayerneeds/1/edit
   def edit
+    if current_user == @prayerneed.user
+    else
+      redirect_to prayerneeds_path
+      flash[:notice] = "You can not do it!"
+    end
   end
 
   # POST /prayerneeds
@@ -40,24 +50,34 @@ class PrayerneedsController < ApplicationController
   # PATCH/PUT /prayerneeds/1
   # PATCH/PUT /prayerneeds/1.json
   def update
-    respond_to do |format|
-      if @prayerneed.update(prayerneed_params)
-        format.html { redirect_to @prayerneed, notice: 'Prayerneed was successfully updated.' }
-        format.json { render :show, status: :ok, location: @prayerneed }
-      else
-        format.html { render :edit }
-        format.json { render json: @prayerneed.errors, status: :unprocessable_entity }
+   if current_user == @prayerneed.user
+      respond_to do |format|
+        if @prayerneed.update(prayerneed_params)
+          format.html { redirect_to @prayerneed, notice: 'Prayerneed was successfully updated.' }
+          format.json { render :show, status: :ok, location: @prayerneed }
+        else
+          format.html { render :edit }
+          format.json { render json: @prayerneed.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to prayerneeds_path
+      flash[:notice] = "You can not do it!"
     end
   end
 
   # DELETE /prayerneeds/1
   # DELETE /prayerneeds/1.json
   def destroy
-    @prayerneed.destroy
-    respond_to do |format|
-      format.html { redirect_to prayerneeds_url, notice: 'Prayerneed was successfully destroyed.' }
-      format.json { head :no_content }
+   if current_user == @prayerneed.user
+      @prayerneed.destroy
+      respond_to do |format|
+        format.html { redirect_to prayerneeds_url, notice: 'Prayerneed was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to prayerneeds_path
+      flash[:notice] = "You can not do it!"
     end
   end
 

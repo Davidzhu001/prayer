@@ -1,5 +1,5 @@
 <% if user_signed_in? %> 
-	<header class="navbar navbar-fixed-top">
+	<header class="navbar navbar-fixed-top bg-green">
 	    <div class="logo">
 	         <h1>Logo</h1>
 
@@ -16,6 +16,7 @@
 		  </button>
 		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 		    <% if user_signed_in? %>
+		    	<li><%= link_to "#{current_user.username}", myprayers_path('#{current_user.username}') %></li>
 		   		<li><%= link_to "My Prayers", prayerneeds_path %></li>
 		   		<li><%= link_to "Setting", edit_user_registration_path %></li>
 		   		<li><%= link_to "My Profiles", profiles_path(current_user) %></li>
