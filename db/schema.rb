@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324210757) do
+ActiveRecord::Schema.define(version: 20150325020930) do
 
   create_table "prayerneeds", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
+    t.boolean  "answer",     default: false
   end
 
   add_index "prayerneeds", ["user_id"], name: "index_prayerneeds_on_user_id"

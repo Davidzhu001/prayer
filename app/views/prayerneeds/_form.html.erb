@@ -29,6 +29,13 @@
     </div>
     <%= error_span(@prayerneed[:content]) %>
   </div>
+  <div class="control-group">
+    <%= f.label :answer, :class => 'control-label' %>
+    <div class="checkbox">
+      <%= f.check_box :answer, :class => 'checkbox' %>
+    </div>
+    <%= error_span(@prayerneed[:content]) %>
+  </div>
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
