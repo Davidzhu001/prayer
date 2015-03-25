@@ -2,17 +2,17 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
         <!-- Ui-40 -->
         <div class="ui-40">
-          <div class="ui-block bg-white">
+          <div class="ui-block bg-green">
             <div class="ui-head">
               <!-- Heading -->
-              <h2 style="color:#C0C0C9">登陆/Sign In</h2>
+              <h2>登陆/Sign In</h2>
             </div>
           </div>
           <!-- Ui-block -->
           <div class="ui-block bg-white">
             <!-- Icon -->
             <div class="ui-icon">
-              <i class="fa fa-envelope lblue"></i>
+              <i class="fa fa-envelope green"></i>
             </div>
             <!-- Input box -->
             <div class="ui-input">
@@ -20,9 +20,9 @@
             </div>
           </div>
           <div class="clearfix"></div>
-          <div class="ui-block bg-white">
+          <div class="ui-block bg-brue">
             <div class="ui-icon">
-              <i class="fa fa-lock lblue"></i>
+              <i class="fa fa-lock green"></i>
             </div>
             <div class="ui-input">
              <%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "password/密码"   %>
@@ -30,7 +30,7 @@
           </div>
           <div class="clearfix"></div>
             <!-- Footer -->
-              <div class="ui-foot bg-lblue">
+              <div class="ui-foot bg-green">
                 <!-- Buttons -->
                 <%= f.submit  t('.sign_in', :default => "Sign in"), class: "ui-button" %>
                 <% end %>
@@ -38,7 +38,7 @@
           </div>
             <div class="ui-block bg-white">
               <div class="ui-icon">
-                <i class="fa fa-flag fa-3x lblue"></i>
+                <i class="fa fa-flag fa-3x red"></i>
               </div>
               <div class="ui-input">
                 <%= render "devise/shared/links" %>
