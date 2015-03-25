@@ -16,13 +16,11 @@
 		  </button>
 		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 		    <% if user_signed_in? %>
-		   		<li><%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></li>
+		   		<li><%= link_to "My Prayers", prayerneeds_path %></li>
 		   		<li><%= link_to "Setting", edit_user_registration_path %></li>
+		   		<li><%= link_to "My Profiles", profiles_path(current_user) %></li>
+		   		<li><%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></li>
 		    <% else %>
-		    	<li role="presentation">Action</li>
-		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-		   		 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-		    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
 		    <% end %>
 		  </ul>
 		 </div>
